@@ -1,27 +1,27 @@
-var numOfSquares = 9;
-var colors = [];
-var squares = document.querySelectorAll(".square");
-var pickedColor;
-var colorDisplay = document.getElementById("colorDisplay");
-var messageDisplay = document.querySelector("#message");
-var h1 = document.querySelector("h1");
-var resetButton = document.getElementById("reset");
-var modeButtons = document.querySelectorAll(".mode");
+const squares = document.querySelectorAll(".square");
+const colorDisplay = document.getElementById("colorDisplay");
+const messageDisplay = document.querySelector("#message");
+const h1 = document.querySelector("h1");
+const resetButton = document.getElementById("reset");
+const modeButtons = document.querySelectorAll(".mode");
+let numOfSquares = 9;
+let colors = [];
+let pickedColor;
 
-init();
 
 function init() {
   // mode for game
-
   setupModeButtons();
   setupSquares();
   reset();
 }
 
+init();
+
 function setupSquares() {
-  for (var i = 0; i < squares.length; i++) {
+  for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener("click", function () {
-      var clickedColor = this.style.backgroundColor;
+      let clickedColor = this.style.backgroundColor;
 
       if (clickedColor === pickedColor) {
         messageDisplay.textContent = "Correct!";
@@ -37,7 +37,7 @@ function setupSquares() {
 }
 
 function setupModeButtons() {
-  for (var i = 0; i < modeButtons.length; i++) {
+  for (let i = 0; i < modeButtons.length; i++) {
     modeButtons[i].addEventListener("click", function () {
       modeButtons[0].classList.remove("selected");
       modeButtons[1].classList.remove("selected");
@@ -57,7 +57,7 @@ function reset() {
   resetButton.textContent = "New Colors";
   messageDisplay.textContent = "";
   // change colors on page
-  for (var i = 0; i < squares.length; i++) {
+  for (let i = 0; i < squares.length; i++) {
     if (colors[i]) {
       squares[i].style.display = "block";
       squares[i].style.background = colors[i];
@@ -73,7 +73,7 @@ resetButton.addEventListener("click", function () {
 });
 
 function changeColors(color) {
-  for (var i = 0; i < squares.length; i++) {
+  for (let i = 0; i < squares.length; i++) {
     squares[i].style.backgroundColor = color;
   }
 }

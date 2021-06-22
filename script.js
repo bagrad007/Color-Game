@@ -79,15 +79,15 @@ function changeColors(color) {
 }
 
 function pickColor() {
-  var random = Math.floor(Math.random() * colors.length);
+  const random = Math.floor(Math.random() * colors.length);
   return colors[random];
 }
 
 function generateRandomColors(num) {
   // make an array
-  var arr = [];
+  const arr = [];
   //repeat num times
-  for (var i = 0; i < num; i++) {
+  for (let i = 0; i < num; i++) {
     //get random color and push into arr
     arr.push(randomColor());
   }
@@ -97,10 +97,10 @@ function generateRandomColors(num) {
 
 function randomColor() {
   //pick a "red" from -255
-  var r = Math.floor(Math.random() * 256);
+  const r = Math.floor(Math.random() * 256);
   //pick a "blue" from -255
-  var g = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
   //pick a "green" from -255
-  var b = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
   return "rgb(" + r + ", " + g + ", " + b + ")";
 }
